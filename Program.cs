@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace ED_DistanceSummer {
   class Program
@@ -36,8 +37,11 @@ namespace ED_DistanceSummer {
         previous = visit.Position;
       }
 
-      Console.WriteLine($"Got {visits.Count} visits to {systems.Count} distinct systems. Travelled {distance} light years.");
+      Console.WriteLine("Found {0} visits to {1} distinct systems. Travelled {2} light years.",
+        visits.Count,
+        systems.Count,
+        distance.ToString("N2", CultureInfo.CreateSpecificCulture("en-UK"))
+      );
     }
   }
-
 }
